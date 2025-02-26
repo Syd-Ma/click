@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+export default function App() {
+
+    const [items, setItems] = React.useState<{ id: number; text: string}[]>([]);
+
+    const addItem = () => {
+        const item = {id: Date.now(), text: "huy"};
+        setItems([...items, item]);
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className={"clicker"}>
+        <button className={"bablo"} onClick={addItem}>bablo</button>
+          <ul>
+              {items.map((item) => (
+                  <li key={item.id}>{item.text}</li>
+              ))}
+          </ul>
+      </div>
     </div>
   );
 }
 
-export default App;
+
