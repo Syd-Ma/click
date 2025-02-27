@@ -59,6 +59,7 @@ body, #root {
     margin-left: auto;
     width: 50vw;
     background-color: white;
+    border: none;
 }
 .money {
     width: 5vw;
