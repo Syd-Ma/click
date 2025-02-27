@@ -9,7 +9,7 @@ export default function App() {
 
     const addItem = () => {
         const randomX = Math.floor(Math.random() * window.innerWidth * 0.8);
-        const randomY = Math.floor(Math.random() * window.innerHeight * 0.8);
+        const randomY = Math.floor(Math.random() * window.innerHeight * 0.7);
         const item = { id: Date.now(), image: '/logo192.png', x: randomX, y: randomY };
         setBalance(prevBalance => prevBalance + 1);
         setItems([...items, item]);
@@ -20,17 +20,18 @@ export default function App() {
     };
   return (
     <div className="App">
+        <div className={"container"}>
         <div className={"balance"}>
-            <h1 className={"balik"}>Your balance {balance}</h1>
-            <button className={"clear"} onClick={clearItems}>clear</button>
+            <h1 className={"balik"}>Your balance {balance} uah</h1>
+            <button className={"clear"} onClick={clearItems}>clear balance</button>
         </div>
 
         <div className={"clicker"}>
-            <button className={"bablo"} onClick={addItem}>bablo</button>
+            <button className={"bablo"} onClick={addItem}></button>
             <div className={"elements"}>
                 {items.map((item) => (
                     <div className={"element"} key={item.id}>
-                        <img src={item.image} alt="Item"
+                        <img className={"money"} src={item.image} alt="Item"
                              style={{
                                  position: 'absolute',
                                  left: `${item.x}px`,
@@ -40,6 +41,7 @@ export default function App() {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     </div>
   );

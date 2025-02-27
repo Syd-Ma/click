@@ -1,0 +1,66 @@
+body, #root {
+    margin: 0;
+    padding: 0;
+}
+.balik{
+    padding-top: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: 10vh;
+    text-align: center;
+    color: white;
+
+}
+.clear {
+    background: none;
+    border: 3px solid white;
+    margin-top: 0;
+    width: 15vw;
+    height: 4vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+
+}
+.container{
+    padding-top: 0;
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #7A59AF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bablo {
+    margin-top: 10vh;
+    border: none;
+    width: 15vw;
+    height: 15vw;
+    background-image: url("bablo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+}
+.bablo:active {
+    border: none;
+}
+.bablo:hover {
+    border: none;
+}
+.element{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50vw;
+    background-color: white;
+}
+.money {
+    width: 5vw;
+    height: 6vw;
+}
