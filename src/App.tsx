@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
+import logo from './public/logo192.png';
 
 export default function App() {
 
-    const [items, setItems] = React.useState<{ id: number; text: string}[]>([]);
+    const [items, setItems] = React.useState<{ id: number; image: string }[]>([]);
     const [balance, setBalance] = React.useState(0);
 
     const addItem = () => {
-        const item = {id: Date.now(), text: "huy"};
+        const item = { id: Date.now(), image: '/logo192.png' };
         setBalance(prevBalance => prevBalance + 1);
         setItems([...items, item]);
     }
@@ -22,15 +23,17 @@ export default function App() {
             <button className={"clear"} onClick={clearItems}>clear</button>
         </div>
 
-      <div className={"clicker"}>
-        <button className={"bablo"} onClick={addItem}>bablo</button>
-          <div className={"elements"}>
-              {items.map((item) => (
-                  <div className={"element"} key={item.id}>{item.text}</div>
-              ))}
-          </div>
-      </div>
-      </div>
+        <div className={"clicker"}>
+            <button className={"bablo"} onClick={addItem}>bablo</button>
+            <div className={"elements"}>
+                {items.map((item) => (
+                    <div className={"element"} key={item.id}>
+                        <img src={item.image} alt="Item"/>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
   );
 }
 
