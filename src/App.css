@@ -1,8 +1,10 @@
 body, #root {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
-.balik{
+
+.balik {
     padding-top: 0;
     margin-top: 0;
     text-transform: uppercase;
@@ -11,8 +13,8 @@ body, #root {
     margin-bottom: 10vh;
     text-align: center;
     color: white;
-
 }
+
 .clear {
     background: none;
     border: 3px solid white;
@@ -22,11 +24,10 @@ body, #root {
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-
 }
-.container{
-    padding-top: 0;
-    margin-top: 0;
+
+.container {
+    position: fixed;
     width: 100vw;
     height: 100vh;
     background: #7A59AF;
@@ -48,20 +49,35 @@ body, #root {
     background-position: center;
     background-color: transparent;
 }
-.bablo:active {
+
+.bablo:active, .bablo:hover {
     border: none;
 }
-.bablo:hover {
-    border: none;
+
+.elements {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
 }
-.element{
-    margin-right: auto;
-    margin-left: auto;
-    width: 50vw;
-    background-color: white;
-    border: none;
-}
+
 .money {
+    position: fixed;
     width: 5vw;
     height: 6vw;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    from {
+        top: -10%;
+        opacity: 1;
+    }
+    to {
+        top: 100%;
+        opacity: 0;
+    }
 }

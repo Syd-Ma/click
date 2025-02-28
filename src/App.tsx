@@ -8,8 +8,8 @@ export default function App() {
     const [balance, setBalance] = React.useState(0);
 
     const addItem = () => {
-        const randomX = Math.floor(Math.random() * window.innerWidth * 0.8);
-        const randomY = Math.floor(Math.random() * window.innerHeight * 0.7);
+        const randomX = Math.floor(Math.random() * window.innerWidth);
+        const randomY = Math.floor(Math.random() * window.innerHeight);
         const item = { id: Date.now(), image: '/logo192.png', x: randomX, y: randomY };
         setBalance(prevBalance => prevBalance + 1);
         setItems([...items, item]);
